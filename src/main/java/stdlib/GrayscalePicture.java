@@ -226,7 +226,7 @@ public final class GrayscalePicture implements ActionListener {
             menuItem1.addActionListener(this);
             // use getMenuShortcutKeyMaskEx() in Java 10 (getMenuShortcutKeyMask() deprecated)
             menuItem1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,
-                                     Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+                                     Toolkit.getDefaultToolkit().getMenuShortcutKeyMaskEx()));
             menu.add(menuItem1);
             frame.setJMenuBar(menuBar);
 

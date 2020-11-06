@@ -242,8 +242,8 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
     private double mouseY = 0;
 
     // keyboard state
-    private final LinkedList<Character> keysTyped = new LinkedList<Character>();
-    private final TreeSet<Integer> keysDown = new TreeSet<Integer>();
+    private final LinkedList<Character> keysTyped = new LinkedList<>();
+    private final TreeSet<Integer> keysDown = new TreeSet<>();
 
     // event-based listeners
     private final ArrayList<DrawListener> listeners = new ArrayList<>();
@@ -365,7 +365,7 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
         menuItem1.addActionListener(this);
         // Java 10+: replace getMenuShortcutKeyMask() with getMenuShortcutKeyMaskEx()
         menuItem1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,
-                                Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+                                Toolkit.getDefaultToolkit().getMenuShortcutKeyMaskEx()));
         menu.add(menuItem1);
         return menuBar;
     }
