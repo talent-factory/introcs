@@ -1,4 +1,4 @@
-package stdlib;/*
+package edu.princeton.cs.stdlib;/*
  *  Compilation:  javac BinaryStdOut.java
  *  Execution:    java BinaryStdOut
  *  Dependencies: none

@@ -1,4 +1,4 @@
-package stdlib;/*
+package edu.princeton.cs.stdlib;/*
  *  Compilation:  javac StdRandom.java
  *  Execution:    java StdRandom
  *  Dependencies: StdOut.java

@@ -1,4 +1,4 @@
-package stdlib;/*
+package edu.princeton.cs.stdlib;/*
  *  Compilation:  javac StdStats.java
  *  Execution:    java StdStats < input.txt
  *  Dependencies: StdOut.java

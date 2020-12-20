@@ -1,4 +1,4 @@
-package stdlib;/*
+package edu.princeton.cs.stdlib;/*
  *  Compilation:  javac In.java
  *  Execution:    java In   (basic test --- see source for required files)
  *  Dependencies: none
@@ -729,7 +729,7 @@ public final class In {
         System.out.println("readLine() from relative path");
         System.out.println("---------------------------------------------------------------------------");
         try {
-            in = new In("../stdlib/InTest.txt");
+            in = new In("../edu.princeton.cs.stdlib/InTest.txt");
             while (!in.isEmpty()) {
                 String s = in.readLine();
                 System.out.println(s);
@@ -760,7 +760,7 @@ public final class In {
         System.out.println("readLine() from absolute OS X / Linux path");
         System.out.println("---------------------------------------------------------------------------");
         try {
-            in = new In("/n/fs/introcs/www/java/stdlib/InTest.txt");
+            in = new In("/n/fs/introcs/www/java/edu.princeton.cs.stdlib/InTest.txt");
             while (!in.isEmpty()) {
                 String s = in.readLine();
                 System.out.println(s);
@@ -776,7 +776,7 @@ public final class In {
         System.out.println("readLine() from absolute Windows path");
         System.out.println("---------------------------------------------------------------------------");
         try {
-            in = new In("G:\\www\\introcs\\stdlib\\InTest.txt");
+            in = new In("G:\\www\\introcs\\edu.princeton.cs.stdlib\\InTest.txt");
             while (!in.isEmpty()) {
                 String s = in.readLine();
                 System.out.println(s);

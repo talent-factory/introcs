@@ -1,4 +1,4 @@
-import stdlib.StdDraw;
+import edu.princeton.cs.stdlib.StdDraw;
 
 /*
  *  Compilation:  javac RightTriangle.java

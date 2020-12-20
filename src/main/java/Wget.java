@@ -1,5 +1,5 @@
-import stdlib.In;
-import stdlib.Out;
+import edu.princeton.cs.stdlib.In;
+import edu.princeton.cs.stdlib.Out;
 
 /*
  *  Compilation:  javac-introcs Wget.java

@@ -1,4 +1,4 @@
-package stdlib;/*
+package edu.princeton.cs.stdlib;/*
  *  Compilation:  javac Out.java
  *  Execution:    java Out
  *  Dependencies: none

@@ -1,4 +1,4 @@
-package stdlib;/*
+package edu.princeton.cs.stdlib;/*
  *  Compilation:  javac StopwatchCPU.java
  *  Execution:    none
  *  Dependencies: none
