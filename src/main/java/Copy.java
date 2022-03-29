@@ -1,5 +1,5 @@
-import stdlib.BinaryStdIn;
-import stdlib.BinaryStdOut;
+import edu.princeton.cs.stdlib.BinaryStdIn;
+import edu.princeton.cs.stdlib.BinaryStdOut;
 
 /*
  *  Compilation:  javac Copy.java

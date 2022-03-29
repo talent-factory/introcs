@@ -1,4 +1,4 @@
-import stdlib.StdAudio;
+import edu.princeton.cs.stdlib.StdAudio;
 
 /*
  *  Compilation:  javac Tone.java
