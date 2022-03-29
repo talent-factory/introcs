@@ -1,4 +1,5 @@
-package edu.princeton.cs.stdlib;/*
+package edu.princeton.cs.stdlib;
+/*
  *  Compilation:  javac StdOut.java
  *  Execution:    java StdOut
  *  Dependencies: none
@@ -6,6 +7,7 @@ package edu.princeton.cs.stdlib;/*
  *  Writes data of various types to standard output.
  *
  */
+
 
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
