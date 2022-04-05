@@ -6,19 +6,20 @@ import edu.princeton.cs.stdlib.StdOut;
 import edu.princeton.cs.stdlib.StdRandom;
 
 /******************************************************************************
- *  Compilation:  javac VerticalPercolation.java
- *  Execution:    java VerticalPercolation < input.txt
- *  Dependencies: StdArrayIO.java StdOut.java
- *  Data files:   http://www.cs.princeton.edu/introcs/24percolation/test5.txt
- *                http://www.cs.princeton.edu/introcs/24percolation/test8.txt
- *                http://www.cs.princeton.edu/introcs/24percolation/testD.txt
- *                http://www.cs.princeton.edu/introcs/24percolation/testV.txt
- *                http://www.cs.princeton.edu/introcs/24percolation/testT.txt
- *                http://www.cs.princeton.edu/introcs/24percolation/testF.txt
- *                http://www.cs.princeton.edu/introcs/24percolation/testTiny.txt
+ *  Compilation:  javac VerticalPercolation.java<br>
+ *  Execution:    java VerticalPercolation &lt; input.txt <br>
+ *  Dependencies: StdArrayIO.java StdOut.java  <br>
+ *  Data files:   http://www.cs.princeton.edu/introcs/24percolation/test5.txt<br>
+ *                http://www.cs.princeton.edu/introcs/24percolation/test8.txt<br>
+ *                http://www.cs.princeton.edu/introcs/24percolation/testD.txt<br>
+ *                http://www.cs.princeton.edu/introcs/24percolation/testV.txt<br>
+ *                http://www.cs.princeton.edu/introcs/24percolation/testT.txt<br>
+ *                http://www.cs.princeton.edu/introcs/24percolation/testF.txt<br>
+ *                http://www.cs.princeton.edu/introcs/24percolation/testTiny.txt<br>
  *                https://introcs.cs.princeton.edu/24percolation/testV.txt
  *
- *  % java VerticalPercolation < test5.txt 
+ *  % java VerticalPercolation &lt; test5.txt
+ *  <pre>
  *  5 5
  *  0 1 1 0 1 
  *  0 0 1 0 1 
@@ -26,8 +27,10 @@ import edu.princeton.cs.stdlib.StdRandom;
  *  0 0 0 0 1 
  *  0 0 0 0 1 
  *  true
+ *  </pre>
  *
- *  % java VerticalPercolation < testD.txt 
+ *  % java VerticalPercolation &lt; testD.txt
+ *  <pre>
  *  8 8
  *  0 0 0 1 1 1 0 1 
  *  0 0 0 0 0 1 0 1 
@@ -38,8 +41,10 @@ import edu.princeton.cs.stdlib.StdRandom;
  *  0 0 0 0 0 0 0 0 
  *  0 0 0 0 0 0 0 0 
  *  false
+ *  </pre>
  *
- *  % java VerticalPercolation < testV.txt
+ *  % java VerticalPercolation &lt; testV.txt
+ *  <pre>
  *  8 8
  *  0 0 0 1 1 1 0 1 
  *  0 0 0 0 0 1 0 1 
@@ -50,6 +55,7 @@ import edu.princeton.cs.stdlib.StdRandom;
  *  0 0 0 0 0 1 0 0 
  *  0 0 0 0 0 1 0 0 
  *  true
+ *  </pre>
  *
  ******************************************************************************/
 
@@ -62,9 +68,7 @@ public class VerticalPercolation {
         boolean[][] isFull = new boolean[n][n];
 
         // identify full sites in row 0
-        for (int j = 0; j < n; j++) {
-            isFull[0][j] = isOpen[0][j];
-        }
+        System.arraycopy(isOpen[0], 0, isFull[0], 0, n);
 
         // update remaining rows
         for (int i = 1; i < n; i++) {

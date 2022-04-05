@@ -6,7 +6,7 @@ import edu.princeton.cs.stdlib.StdOut;
 
 /******************************************************************************
  *  Compilation:  javac StockAccount.java
- *  Execution:    java StockAccount < input.txt
+ *  Execution:    java StockAccount &lt; input.txt
  *  Dependencies: In.java StdOut.java StockQuote.java
  *  Data files:   http://www.cs.princeton.edu/introcs/32class/Turing.txt
  *

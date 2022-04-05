@@ -37,7 +37,7 @@ package edu.princeton.cs._13flow;
  *
  *   Remarks
  *   -------
- *   - Tests factor*factor <= n instead of factor <= n for efficiency.
+ *   - Tests factor*factor &lte; n instead of factor &lt; n for efficiency.
  *
  *   - The last two examples still take a few minutes.
  *

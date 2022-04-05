@@ -5,14 +5,14 @@ import edu.princeton.cs.stdlib.StdIn;
 
 /******************************************************************************
  *  Compilation:  javac PlayThatTune.java
- *  Execution:    java PlayThatTune < input.txt
+ *  Execution:    java PlayThatTune &lt; input.txt
  *  Dependencies: StdAudio.java StdAudio.java
  *
  *  This is a data-driven program that plays pure tones from
  *  the notes on the chromatic scale, specified on standard input
  *  by their distance from concert A.
  *
- *  % java PlayThatTune < elise.txt
+ *  % java PlayThatTune &lt; elise.txt
  *
  *
  *  Data files

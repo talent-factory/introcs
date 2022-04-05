@@ -11,9 +11,9 @@ import edu.princeton.cs.stdlib.StdOut;
  *  Data files:   http://www.cs.princeton.edu/introcs/44st/TaleOfTwoCities.java
  *
  *  Create an index of all words in the given input file such that
- *  the word has length >= i and occurs >= j times.
+ *  the word has length &gte; i and occurs &gt; j times.
  *
- *  % java Index 9 30 < TaleOfTwoCities.txt 
+ *  % java Index 9 30 &lt; TaleOfTwoCities.txt
  *  confidence: 2794 23064 25031 34249 47907 48268 48577 ... 
  *  courtyard: 11885 12062 17303 17451 32404 32522 38663 ... 
  *  evremonde: 86211 90791 90798 90802 90814 90822 90856 ... 
@@ -38,12 +38,12 @@ public class Index {
         String[] words = StdIn.readAllStrings();
 
         // build symbol table of words and locations
-        ST<String, Queue<Integer>> st = new ST<String, Queue<Integer>>();
+        ST<String, Queue<Integer>> st = new ST<>();
         for (int i = 0; i < words.length; i++) {
             String s = words[i];
             if (s.length() < minLength) continue;
             if (!st.contains(s)) {
-                st.put(s, new Queue<Integer>());
+                st.put(s, new Queue<>());
             }
             Queue<Integer> q = st.get(s);
             q.enqueue(i);
