@@ -5,7 +5,7 @@ import edu.princeton.cs.stdlib.StdOut;
 
 /******************************************************************************
  *  Compilation:  javac DeDup.java
- *  Execution:    java DeDup < words.txt
+ *  Execution:    java DeDup &lt; words.txt
  *  Dependencies: SET.java StdIn.java
  *
  *  Read in a list of words from standard input and print out

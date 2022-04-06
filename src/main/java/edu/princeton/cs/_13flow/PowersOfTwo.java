@@ -26,7 +26,7 @@ package edu.princeton.cs._13flow;
  *
  *  Remarks
  *  ------------
- *  Only works if 0 <= n < 31 since 2^31 overflows an int.
+ *  Only works if 0 &lte; n &lt; 31 since 2^31 overflows an int.
  *
  ******************************************************************************/
 

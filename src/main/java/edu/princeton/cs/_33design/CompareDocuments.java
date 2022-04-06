@@ -6,7 +6,7 @@ import edu.princeton.cs.stdlib.StdOut;
 
 /******************************************************************************
  *  Compilation:  javac CompareDocuments.java
- *  Execution:    java CompareDocuments 5 10000 < documents.txt
+ *  Execution:    java CompareDocuments 5 10000 &lt; documents.txt
  *  Data files:   http://www.cs.princeton.edu/introcs/33design/documents.txt
  *                http://www.cs.princeton.edu/introcs/33design/Constitution.txt
  *                http://www.cs.princeton.edu/introcs/33design/TomSawyer.txt
@@ -17,7 +17,7 @@ import edu.princeton.cs.stdlib.StdOut;
  *                http://www.cs.princeton.edu/introcs/33design/Amazon.html
  *                http://www.cs.princeton.edu/introcs/33design/ATCG.txt
  *
- *  % java CompareDocuments 5 10000 < documents.txt 
+ *  % java CompareDocuments 5 10000 &lt; documents.txt
  *          Cons    TomS    Huck    Prej    Pict    DJIA    Amaz    ATCG
  *  Cons    1.00    0.66    0.60    0.64    0.20    0.18    0.21    0.11
  *  TomS    0.66    1.00    0.93    0.88    0.12    0.24    0.18    0.14
@@ -46,8 +46,8 @@ public class CompareDocuments {
        
         // print header
         StdOut.print("    ");
-        for (int i = 0; i < n; i++) {
-            StdOut.printf("%8.4s", filenames[i]);
+        for (String filename : filenames) {
+            StdOut.printf("%8.4s", filename);
         }
         StdOut.println();
 

@@ -6,7 +6,7 @@ import edu.princeton.cs.stdlib.StdRandom;
 
 /******************************************************************************
  *  Compilation:  javac IFS.java
- *  Execution:    java IFS trials < input.txt
+ *  Execution:    java IFS trials &lt; input.txt
  *  Dependencies: StdDraw.java
  *
  *  Here are some sample data files:

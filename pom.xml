@@ -6,7 +6,7 @@
 
     <groupId>edu.princeton.cs</groupId>
     <artifactId>introcs</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0-SNAPSHOT</version>
 
     <organization>
         <name>Princeton University</name>
@@ -29,5 +29,24 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
+
+    <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- https://sharkysoft.com/ -->
+        <dependency>
+            <groupId>com.sharkysoft</groupId>
+            <artifactId>lava</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
+    </dependencies>
 
 </project>

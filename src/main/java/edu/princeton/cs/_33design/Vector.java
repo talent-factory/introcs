@@ -20,7 +20,7 @@ import edu.princeton.cs.stdlib.StdOut;
  *  x + y    =  (6.0, 4.0, 7.0, 5.0)
  *  10x      =  (10.0, 20.0, 30.0, 40.0)
  *  |x|      =  5.477225575051661
- *  <x, y>   =  25.0
+ *  &lt;x, y&gt;   =  25.0
  *  |x - y|  =  5.0990195135927845
  *
  *  Note that java.util.Vector is an unrelated Java library class.
@@ -44,8 +44,7 @@ public class Vector {
 
         // defensive copy so that client can't alter our copy of data[]
         this.data = new double[n];
-        for (int i = 0; i < n; i++)
-            this.data[i] = data[i];
+        System.arraycopy(data, 0, this.data, 0, n);
     }
 
     // create a vector from either an array or a vararg list

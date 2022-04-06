@@ -44,7 +44,7 @@ import java.util.TreeSet;
  *  This implementation uses a balanced binary search tree. It requires that
  *  For additional documentation,
  *  see <a href="https://introcs.cs.princeton.edu/44st">Section 4.4</a> of
- *  <i>Computer Science: An Interdisciplinary Approach/i>
+ *  <i>Computer Science: An Interdisciplinary Approach</i>
  *  by Robert Sedgewick and Kevin Wayne. 
  *
  *  @author Robert Sedgewick
@@ -54,7 +54,7 @@ import java.util.TreeSet;
  */
 
 public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
-    private TreeSet<Key> set;
+    private final TreeSet<Key> set;
 
     /**
      * Initializes an empty set.

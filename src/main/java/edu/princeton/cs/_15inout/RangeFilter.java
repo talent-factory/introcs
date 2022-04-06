@@ -5,7 +5,7 @@ import edu.princeton.cs.stdlib.StdOut;
 
 /******************************************************************************
  *  Compilation:  javac RangeFilter.java
- *  Execution:    java RangeFilter lo hi < input.txt
+ *  Execution:    java RangeFilter lo hi &lt; input.txt
  *  Dependencies: StdIn.java StdOut.java
  *
  *  Read in a sequence of integers from standard input and print

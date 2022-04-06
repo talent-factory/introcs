@@ -5,10 +5,10 @@ import edu.princeton.cs.stdlib.StdIn;
 
 /******************************************************************************
  *  Compilation:  javac PlotFilter.java
- *  Execution:    java PlotFilter < input.txt
+ *  Execution:    java PlotFilter &lt; input.txt
  *  Dependencies: StdDraw.java StdIn.java
  *
- *  % java PlotFilter < USA.txt
+ *  % java PlotFilter &lt; USA.txt
  *
  *  Datafiles:    http://introcs.cs.princeton.edu/java/15inout/USA.txt
  *
