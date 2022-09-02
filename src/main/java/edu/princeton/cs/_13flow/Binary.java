@@ -1,6 +1,6 @@
 package edu.princeton.cs._13flow;
 
-/******************************************************************************
+/*
  *  Compilation:  javac Binary.java
  *  Execution:    java Binary n
  *
@@ -24,9 +24,10 @@ package edu.princeton.cs._13flow;
  *
  *  Remarks
  *  -------
- *  could use Integer.toBinaryString(N) instead.
- *
- ******************************************************************************/
+ *  We could use Integer.toBinaryString(N) instead.
+ */
+
+import edu.princeton.cs.stdlib.StdOut;
 
 public class Binary {
     public static void main(String[] args) {
@@ -45,12 +46,12 @@ public class Binary {
 
             // power is not present in n 
             if (n < power) {
-                System.out.print(0);
+                StdOut.print(0);
             }
 
             // power is present in n, so subtract power from n
             else {
-                System.out.print(1);
+                StdOut.print(1);
                 n -= power;
             }
 
@@ -58,7 +59,7 @@ public class Binary {
             power /= 2;
         }
 
-        System.out.println();
+        StdOut.println();
 
     }
 

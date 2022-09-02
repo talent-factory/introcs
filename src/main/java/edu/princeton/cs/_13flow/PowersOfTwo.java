@@ -1,6 +1,6 @@
 package edu.princeton.cs._13flow;
 
-/******************************************************************************
+/*
  *  Compilation:  javac PowersOfTwo.java
  *  Execution:    java PowersOfTwo n
  *
@@ -26,9 +26,12 @@ package edu.princeton.cs._13flow;
  *
  *  Remarks
  *  ------------
- *  Only works if 0 &lte; n &lt; 31 since 2^31 overflows an int.
+ *  Only works if 0 <= n < 31 since 2^31 overflows an int.
  *
- ******************************************************************************/
+ *
+ */
+
+import edu.princeton.cs.stdlib.StdOut;
 
 public class PowersOfTwo {
     public static void main(String[] args) {
@@ -41,7 +44,7 @@ public class PowersOfTwo {
 
         // repeat until i equals n
         while (i <= n) {
-            System.out.println(i + " " + powerOfTwo);   // print out the power of two
+            StdOut.println(i + " " + powerOfTwo);   // print out the power of two
             powerOfTwo = 2 * powerOfTwo;                // double to get the next one
             i = i + 1;
         }

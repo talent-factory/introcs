@@ -1,6 +1,6 @@
 package edu.princeton.cs._12types;
 
-/******************************************************************************
+/*
  *  Compilation:  javac Quadratic.java
  *  Execution:    java Quadatic b c
  *
@@ -20,13 +20,14 @@ package edu.princeton.cs._12types;
  *  % java Quadratic 1.0 1.0
  *  NaN
  *  NaN
- *
- *
- ******************************************************************************/
+ */
+
+import edu.princeton.cs.stdlib.StdOut;
 
 public class Quadratic {
 
     public static void main(String[] args) {
+
         double b = Double.parseDouble(args[0]);
         double c = Double.parseDouble(args[1]);
 
@@ -36,7 +37,7 @@ public class Quadratic {
         double root1 = (-b + sqroot) / 2.0;
         double root2 = (-b - sqroot) / 2.0;
 
-        System.out.println(root1);
-        System.out.println(root2);
+        StdOut.println(root1);
+        StdOut.println(root2);
     }
 }
