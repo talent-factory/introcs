@@ -1,6 +1,6 @@
 package edu.princeton.cs._12types;
 
-/******************************************************************************
+/*
  *  Compilation:  javac LeapYear.java
  *  Execution:    java LeapYear n
  *
@@ -15,8 +15,9 @@ package edu.princeton.cs._12types;
  *
  *  % java LeapYear 2000
  *  true
- *
- ******************************************************************************/
+ */
+
+import edu.princeton.cs.stdlib.StdOut;
 
 public class LeapYear {
     public static void main(String[] args) {
@@ -32,6 +33,6 @@ public class LeapYear {
         // divisible by 4 and not 100 unless divisible by 400
         isLeapYear = isLeapYear || (year % 400 == 0);
 
-        System.out.println(isLeapYear);
+        StdOut.println(isLeapYear);
     }
 }

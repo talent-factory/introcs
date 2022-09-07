@@ -20,6 +20,6 @@
         <module name="introcs" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="15" />
+    <bytecodeTargetLevel target="18" />
   </component>
 </project>

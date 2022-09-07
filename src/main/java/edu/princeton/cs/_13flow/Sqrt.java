@@ -1,6 +1,8 @@
 package edu.princeton.cs._13flow;
 
-/******************************************************************************
+import edu.princeton.cs.stdlib.StdOut;
+
+/*
  *  Compilation:  javac Sqrt.java
  *  Execution:    java Sqrt c
  *
@@ -41,7 +43,7 @@ package edu.princeton.cs._13flow;
  *  ----------
  *   - goes into an infinite loop if the input is negative
  *
- ******************************************************************************/
+ */
 
 public class Sqrt {
     public static void main(String[] args) {
@@ -57,7 +59,7 @@ public class Sqrt {
         }
 
         // print out the estimate of the square root of c
-        System.out.println(t);
+        StdOut.println(t);
     }
 
 }

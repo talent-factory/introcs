@@ -1,6 +1,6 @@
 package edu.princeton.cs._12types;
 
-/******************************************************************************
+/*
  *  Compilation:  javac Ruler.java
  *  Execution:    java Ruler
  *
@@ -11,9 +11,10 @@ package edu.princeton.cs._12types;
  *  1 2 1 
  *  1 2 1 3 1 2 1 
  *  1 2 1 3 1 2 1 4 1 2 1 3 1 2 1 
- *  1 2 1 3 1 2 1 4 1 2 1 3 1 2 1 5 1 2 1 3 1 2 1 4 1 2 1 3 1 2 1 
- *
- ******************************************************************************/
+ *  1 2 1 3 1 2 1 4 1 2 1 3 1 2 1 5 1 2 1 3 1 2 1 4 1 2 1 3 1 2 1
+ */
+
+import edu.princeton.cs.stdlib.StdOut;
 
 public class Ruler {
     public static void main(String[] args) {
@@ -23,11 +24,11 @@ public class Ruler {
         String ruler4 = ruler3 + "4" + ruler3;
         String ruler5 = ruler4 + "5" + ruler4;
 
-        System.out.println(ruler1);
-        System.out.println(ruler2);
-        System.out.println(ruler3);
-        System.out.println(ruler4);
-        System.out.println(ruler5);
+        StdOut.println(ruler1);
+        StdOut.println(ruler2);
+        StdOut.println(ruler3);
+        StdOut.println(ruler4);
+        StdOut.println(ruler5);
     }
 
 }
