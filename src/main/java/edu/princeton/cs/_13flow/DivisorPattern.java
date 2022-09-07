@@ -1,6 +1,6 @@
 package edu.princeton.cs._13flow;
 
-/******************************************************************************
+/*
  *  Compilation:  javac DivisorPattern.java
  *  Execution:    java DivisorPattern n
  *  
@@ -30,7 +30,9 @@ package edu.princeton.cs._13flow;
  *  *                                   *   19
  *  * *   * *         *                   * 20
  *
- ******************************************************************************/
+ */
+
+import edu.princeton.cs.stdlib.StdOut;
 
 public class DivisorPattern {
 
@@ -40,13 +42,13 @@ public class DivisorPattern {
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n; j++) {
                 if (i % j == 0 || j % i == 0) {
-                    System.out.print("* "); 
+                    StdOut.print("* ");
                 }
                 else {
-                    System.out.print("  "); 
+                    StdOut.print("  ");
                 }
             }
-            System.out.println(i);
+            StdOut.println(i);
         }
     }
 }

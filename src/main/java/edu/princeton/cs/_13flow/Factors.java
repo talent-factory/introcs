@@ -1,6 +1,6 @@
 package edu.princeton.cs._13flow;
 
-/******************************************************************************
+/*
  *  Compilation:  javac Factors.java
  *  Execution:    java Factors n
  *  
@@ -41,7 +41,9 @@ package edu.princeton.cs._13flow;
  *
  *   - The last two examples still take a few minutes.
  *
- ******************************************************************************/
+ */
+
+import edu.princeton.cs.stdlib.StdOut;
 
 public class Factors {
 
@@ -50,20 +52,20 @@ public class Factors {
         // command-line argument
         long n = Long.parseLong(args[0]);
 
-        System.out.print("The prime factorization of " + n + " is: ");
+        StdOut.print("The prime factorization of " + n + " is: ");
 
         // for each potential factor
         for (long factor = 2; factor*factor <= n; factor++) {
 
             // if factor is a factor of n, repeatedly divide it out
             while (n % factor == 0) {
-                System.out.print(factor + " "); 
+                StdOut.print(factor + " ");
                 n = n / factor;
             }
         }
 
         // if biggest factor occurs only once, n > 1
-        if (n > 1) System.out.println(n);
-        else       System.out.println();
+        if (n > 1) StdOut.println(n);
+        else       StdOut.println();
     }
 }

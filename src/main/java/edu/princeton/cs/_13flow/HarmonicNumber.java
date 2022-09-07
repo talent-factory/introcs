@@ -1,6 +1,6 @@
 package edu.princeton.cs._13flow;
 
-/******************************************************************************
+/*
  *  Compilation:  javac HarmonicNumber.java
  *  Execution:    java HarmonicNumber n
  *
@@ -15,7 +15,9 @@ package edu.princeton.cs._13flow;
  *  % java HarmonicNumber 10000
  *  9.787606036044348
  *
- ******************************************************************************/
+ */
+
+import edu.princeton.cs.stdlib.StdOut;
 
 public class HarmonicNumber {
     public static void main(String[] args) {
@@ -30,7 +32,7 @@ public class HarmonicNumber {
         }
 
         // print the nth harmonic number
-        System.out.println(sum);
+        StdOut.println(sum);
     }
 
 }

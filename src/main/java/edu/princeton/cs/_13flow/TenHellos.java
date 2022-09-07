@@ -1,6 +1,6 @@
 package edu.princeton.cs._13flow;
 
-/******************************************************************************
+/*
  *  Compilation:  javac TenHellos.java
  *  Execution:    java TenHellos
  * 
@@ -19,20 +19,22 @@ package edu.princeton.cs._13flow;
  *  9th Hello
  *  10th Hello
  *
- ******************************************************************************/
+ */
 
-public class TenHellos { 
+import edu.princeton.cs.stdlib.StdOut;
+
+public class TenHellos {
     public static void main(String[] args) {
 
         // print out special cases whose ordinal doesn't end in th
-        System.out.println("1st Hello");
-        System.out.println("2nd Hello");
-        System.out.println("3rd Hello");
+        StdOut.println("1st Hello");
+        StdOut.println("2nd Hello");
+        StdOut.println("3rd Hello");
 
         // count from i = 4 to 10
         int i = 4;
         while (i <= 10) {
-            System.out.println(i + "th Hello");
+            StdOut.println(i + "th Hello");
             i = i + 1;
         }
 

@@ -1,6 +1,6 @@
 package edu.princeton.cs._13flow;
 
-/******************************************************************************
+/*
  *  Compilation:  javac Gambler.java
  *  Execution:    java Gambler stake goal N
  *  
@@ -24,11 +24,14 @@ package edu.princeton.cs._13flow;
  *  Percent of games won = 50.3
  *  Avg # bets           = 2464.59
  *
- ******************************************************************************/
+ */
 
-public class Gambler { 
+import edu.princeton.cs.stdlib.StdOut;
+
+public class Gambler {
 
     public static void main(String[] args) {
+
         int stake  = Integer.parseInt(args[0]);    // gambler's stating bankroll
         int goal   = Integer.parseInt(args[1]);    // gambler's desired bankroll
         int trials = Integer.parseInt(args[2]);    // number of trials to perform
@@ -50,9 +53,9 @@ public class Gambler {
         }
 
         // print results
-        System.out.println(wins + " wins of " + trials);
-        System.out.println("Percent of games won = " + 100.0 * wins / trials);
-        System.out.println("Avg # bets           = " + 1.0 * bets / trials);
+        StdOut.println(wins + " wins of " + trials);
+        StdOut.println("Percent of games won = " + 100.0 * wins / trials);
+        StdOut.println("Avg # bets           = " + 1.0 * bets / trials);
     }
 
 }

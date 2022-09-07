@@ -1,6 +1,6 @@
 package edu.princeton.cs._12types;
 
-/******************************************************************************
+/*
  *  Compilation:  javac RandomInt.java
  *  Execution:    java RandomInt N
  *
@@ -18,8 +18,9 @@ package edu.princeton.cs._12types;
  *
  *  % java RandomInt 1000
  *  Your random integer is: 333
- *
- ******************************************************************************/
+ */
+
+import edu.princeton.cs.stdlib.StdOut;
 
 public class RandomInt {
     public static void main(String[] args) {
@@ -32,6 +33,6 @@ public class RandomInt {
         // a pseudo-random integer between 0 and n-1
         int value = (int) (r * n);
 
-        System.out.println(value);
+        StdOut.println(value);
     }
 }
