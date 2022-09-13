@@ -1,14 +1,16 @@
+package ch.challenges.examples;
+
 import edu.princeton.cs.stdlib.In;
 import edu.princeton.cs.stdlib.Out;
 
 /*
- *  Compilation:  javac-introcs Wget.java
- *  Execution:    java-introcs Wget url
+ *  Compilation:  javac-introcs ch.challenges.examples.Wget.java
+ *  Execution:    java-introcs ch.challenges.examples.Wget url
  *
  *  Reads in a URL specified on the command line and saves its contents
  *  in a file with the given name.
  *
- *  % java Wget https://introcs.cs.princeton.edu/java/data/codes.csv
+ *  % java ch.challenges.examples.Wget https://introcs.cs.princeton.edu/java/data/codes.csv
  *
  */
 

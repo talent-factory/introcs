@@ -1,8 +1,10 @@
+package ch.challenges.examples;
+
 import edu.princeton.cs.stdlib.StdDraw;
 
 /*
- *  Compilation:  javac RightTriangle.java
- *  Execution:    java RightTriangle
+ *  Compilation:  javac ch.challenges.examples.RightTriangle.java
+ *  Execution:    java ch.challenges.examples.RightTriangle
  *
  *  Draws a right triangle and a circumscribing circle.
  *

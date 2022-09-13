@@ -1,14 +1,16 @@
+package ch.challenges.examples;
+
 import edu.princeton.cs.stdlib.StdAudio;
 
 /*
- *  Compilation:  javac Tone.java
- *  Execution:    java Tone hz seconds
+ *  Compilation:  javac ch.challenges.examples.Tone.java
+ *  Execution:    java ch.challenges.examples.Tone hz seconds
  *  Dependencies: StdAudio.java
  *
  *  This program takes the frequency and duration from the command line,
  *  and plays a sine wave of the given frequency for the given duration.
  *
- *  % java Tone 440.0 1.5
+ *  % java ch.challenges.examples.Tone 440.0 1.5
  *
  */
 

@@ -358,7 +358,7 @@ import javax.swing.KeyStroke;
  *  <ul>
  *  <li> Clear the offscreen canvas.
  *  <li> Draw objects on the offscreen canvas.
- *  <li> Copy the offscreen canvas to the onscreen canvas.
+ *  <li> ch.challenges.examples.Copy the offscreen canvas to the onscreen canvas.
  *  <li> Wait for a short while.
  *  </ul>
  *  <p>
@@ -593,7 +593,10 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     private static final double DEFAULT_XMAX = 1.0;
     private static final double DEFAULT_YMIN = 0.0;
     private static final double DEFAULT_YMAX = 1.0;
-    private static double xmin, ymin, xmax, ymax;
+    private static double xmin;
+    private static double ymin;
+    private static double xmax;
+    private static double ymax;
 
     // for synchronization
     private static final Object mouseLock = new Object();
@@ -606,8 +609,10 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     private static Font font;
 
     // double buffered graphics
-    private static BufferedImage offscreenImage, onscreenImage;
-    private static Graphics2D offscreen, onscreen;
+    private static BufferedImage offscreenImage;
+    private static BufferedImage onscreenImage;
+    private static Graphics2D offscreen;
+    private static Graphics2D onscreen;
 
     // singleton for callbacks: avoids generation of extra .class files
     private static final StdDraw std = new StdDraw();
@@ -1971,7 +1976,6 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
                 throw new NoSuchElementException("your program has already processed all keystrokes");
             }
             return keysTyped.remove(keysTyped.size() - 1);
-            // return keysTyped.removeLast();
         }
     }
 
@@ -2035,6 +2039,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
             super(image);
         }
 
+       @Override
         public int getIconWidth() {
             return super.getIconWidth() / 2;
         }
@@ -2044,10 +2049,12 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
          *
          * @return the height in pixels of this icon
          */
+        @Override
         public int getIconHeight() {
             return super.getIconHeight() / 2;
         }
 
+       @Override
         public synchronized void paintIcon(Component c, Graphics g, int x, int y) {
             Graphics2D g2 = (Graphics2D) g.create();
             g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION,RenderingHints.VALUE_INTERPOLATION_BICUBIC);
