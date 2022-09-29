@@ -3,6 +3,8 @@
 
 # Generated files
 .gradle
+target/
+
 **/build/
 !src/**/build/
 gradle-app.setting
