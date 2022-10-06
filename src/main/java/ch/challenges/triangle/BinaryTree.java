@@ -33,7 +33,7 @@ public class BinaryTree {
         for (int row = 0; row < value; row++) {
             // Leerzeichen vor den Sternen einfügen
             for (int i = row; i < value - 1; i++)
-                System.out.print(" ");
+                StdOut.print(" ");
 
             for (int column = 0; column < row + 1; column++) {
                 //noinspection AssignmentUsedAsCondition
