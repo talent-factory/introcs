@@ -7,6 +7,7 @@ package edu.princeton.cs.stdlib;/*
  *
  */
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Locale;
@@ -211,10 +212,10 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"unused", "DuplicatedCode"})
 public final class StdIn {
 
-    /*** begin: section (1 of 2) of code duplicated from In to StdIn. */
+    private static final String NO_MORE_TOKENS = "but no more tokens are available";
+    private static final String NEXT_TOKEN = "but the next token is \"";
 
-    // assume Unicode UTF-8 encoding
-    private static final String CHARSET_NAME = "UTF-8";
+    /*** begin: section (1 of 2) of code duplicated from In to StdIn. */
 
     // assume language = English, country = US for consistency with System.out.
     private static final Locale LOCALE = Locale.US;
@@ -314,7 +315,7 @@ public final class StdIn {
         }
         catch (NoSuchElementException e) {
             throw new NoSuchElementException("attempts to read a 'char' value from standard input, "
-                                           + "but no more tokens are available");
+                                           + NO_MORE_TOKENS);
         }
     }
 
@@ -348,7 +349,7 @@ public final class StdIn {
         }
         catch (NoSuchElementException e) {
             throw new NoSuchElementException("attempts to read a 'String' value from standard input, "
-                                           + "but no more tokens are available");
+                                           + NO_MORE_TOKENS);
         }
     }
 
@@ -366,11 +367,11 @@ public final class StdIn {
         catch (InputMismatchException e) {
             String token = scanner.next();
             throw new InputMismatchException("attempts to read an 'int' value from standard input, "
-                                           + "but the next token is \"" + token + "\"");
+                                           + NEXT_TOKEN + token + "\"");
         }
         catch (NoSuchElementException e) {
             throw new NoSuchElementException("attemps to read an 'int' value from standard input, "
-                                           + "but no more tokens are available");
+                                           + NO_MORE_TOKENS);
         }
 
     }
@@ -389,11 +390,11 @@ public final class StdIn {
         catch (InputMismatchException e) {
             String token = scanner.next();
             throw new InputMismatchException("attempts to read a 'double' value from standard input, "
-                                           + "but the next token is \"" + token + "\"");
+                                           + NEXT_TOKEN + token + "\"");
         }
         catch (NoSuchElementException e) {
             throw new NoSuchElementException("attempts to read a 'double' value from standard input, "
-                                           + "but no more tokens are available");
+                                           + NO_MORE_TOKENS);
         }
     }
 
@@ -411,7 +412,7 @@ public final class StdIn {
         catch (InputMismatchException e) {
             String token = scanner.next();
             throw new InputMismatchException("attempts to read a 'float' value from standard input, "
-                                           + "but the next token is \"" + token + "\"");
+                                           + NEXT_TOKEN + token + "\"");
         }
         catch (NoSuchElementException e) {
             throw new NoSuchElementException("attempts to read a 'float' value from standard input, "
@@ -433,11 +434,11 @@ public final class StdIn {
         catch (InputMismatchException e) {
             String token = scanner.next();
             throw new InputMismatchException("attempts to read a 'long' value from standard input, "
-                                           + "but the next token is \"" + token + "\"");
+                                           + NEXT_TOKEN + token + "\"");
         }
         catch (NoSuchElementException e) {
             throw new NoSuchElementException("attempts to read a 'long' value from standard input, "
-                                           + "but no more tokens are available");
+                                           + NO_MORE_TOKENS);
         }
     }
 
@@ -455,11 +456,11 @@ public final class StdIn {
         catch (InputMismatchException e) {
             String token = scanner.next();
             throw new InputMismatchException("attempts to read a 'short' value from standard input, "
-                                           + "but the next token is \"" + token + "\"");
+                                           + NEXT_TOKEN + token + "\"");
         }
         catch (NoSuchElementException e) {
             throw new NoSuchElementException("attempts to read a 'short' value from standard input, "
-                                           + "but no more tokens are available");
+                                           + NO_MORE_TOKENS);
         }
     }
 
@@ -477,11 +478,11 @@ public final class StdIn {
         catch (InputMismatchException e) {
             String token = scanner.next();
             throw new InputMismatchException("attempts to read a 'byte' value from standard input, "
-                                           + "but the next token is \"" + token + "\"");
+                                           + NEXT_TOKEN + token + "\"");
         }
         catch (NoSuchElementException e) {
             throw new NoSuchElementException("attempts to read a 'byte' value from standard input, "
-                                           + "but no more tokens are available");
+                                           + NO_MORE_TOKENS);
         }
     }
 
@@ -503,11 +504,11 @@ public final class StdIn {
             if ("1".equals(token))               return true;
             if ("0".equals(token))               return false;
             throw new InputMismatchException("attempts to read a 'boolean' value from standard input, "
-                                           + "but the next token is \"" + token + "\"");
+                                           + NEXT_TOKEN + token + "\"");
         }
         catch (NoSuchElementException e) {
             throw new NoSuchElementException("attempts to read a 'boolean' value from standard input, "
-                                           + "but no more tokens are available");
+                                           + NO_MORE_TOKENS);
         }
 
     }
@@ -596,48 +597,13 @@ public final class StdIn {
      * If StdIn changes, use this to reinitialize the scanner.
      */
     private static void resync() {
-        setScanner(new Scanner(new java.io.BufferedInputStream(System.in), CHARSET_NAME));
+        setScanner(new Scanner(new java.io.BufferedInputStream(System.in), StandardCharsets.UTF_8));
     }
 
     private static void setScanner(Scanner scanner) {
         StdIn.scanner = scanner;
         StdIn.scanner.useLocale(LOCALE);
     }
-
-   /**
-     * Reads all remaining tokens, parses them as integers, and returns
-     * them as an array of integers.
-     * @return all remaining integers, as an array
-     * @throws InputMismatchException if any token cannot be parsed as an {@code int}
-     * @deprecated Replaced by {@link #readAllInts()}.
-     */
-    @Deprecated
-    public static int[] readInts() {
-        return readAllInts();
-    }
-
-   /**
-     * Reads all remaining tokens, parses them as doubles, and returns
-     * them as an array of doubles.
-     * @return all remaining doubles, as an array
-     * @throws InputMismatchException if any token cannot be parsed as a {@code double}
-     * @deprecated Replaced by {@link #readAllDoubles()}.
-     */
-    @Deprecated
-    public static double[] readDoubles() {
-        return readAllDoubles();
-    }
-
-   /**
-     * Reads all remaining tokens and returns them as an array of strings.
-     * @return all remaining tokens, as an array of strings
-     * @deprecated Replaced by {@link #readAllStrings()}.
-     */
-    @Deprecated
-    public static String[] readStrings() {
-        return readAllStrings();
-    }
-
 
     /**
      * Interactive test of basic functionality.
