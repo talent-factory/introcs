@@ -1,9 +1,15 @@
 package edu.princeton.cs.stdlib;
 
-public class StdIO {
+public final class StdIO {
 
     /**
-     * Einlesen eines ganzzahlingen Wertes. Der Benutzer wird so lange aufgefordert
+     * Es macht keinen Sinn, diese Klasse zu instanziieren
+     */
+    private StdIO() {
+    }
+
+    /**
+     * Einlesen eines ganzzahligen Wertes. Der Benutzer wird so lange aufgefordert
      * einen Wert einzugeben, bis die Eingabe gültig ist.
      *
      * @param prompt Eingabeaufforderung
@@ -17,6 +23,7 @@ public class StdIO {
                 result = StdIn.readInt();
                 break;
             } catch (Exception ignore) {
+                // Intentionally empty
             }
         }
         return result;
