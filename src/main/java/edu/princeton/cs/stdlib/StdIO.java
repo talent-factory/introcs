@@ -1,5 +1,7 @@
 package edu.princeton.cs.stdlib;
 
+import org.apache.commons.lang3.StringUtils;
+
 public final class StdIO {
 
     /**
@@ -15,8 +17,9 @@ public final class StdIO {
      * @return {@code true}, falls die Zeichenkette einer gültigen Zahl entspricht
      */
     public static boolean isNumeric(String str) {
-        return str != null && str.matches("[-+]?\\d*\\.?\\d+");
+        return StringUtils.isNumeric(str);
     }
+
 
     /**
      * Einlesen eines ganzzahligen Wertes. Der Benutzer wird so lange aufgefordert

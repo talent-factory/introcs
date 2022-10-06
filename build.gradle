@@ -14,10 +14,14 @@ repositories {
     maven {
         url = uri('https://repo.maven.apache.org/maven2/')
     }
+    mavenCentral()
 }
 
 dependencies {
 
+    // https://commons.apache.org/proper/commons-lang/javadocs/api-release/index.html
+    implementation('org.apache.commons:commons-lang3:3.12.0')
+    
     testImplementation("org.assertj:assertj-core:3.23.1")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
