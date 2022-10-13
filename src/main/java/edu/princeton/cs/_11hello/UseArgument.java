@@ -2,7 +2,7 @@ package edu.princeton.cs._11hello;
 
 /*
  *  Compilation:  javac UseArgument.java
- *  Execution:    java UseArgument yourname
+ *  Execution:    java UseArgument your name
  *
  *  Prints "Hi, Bob. How are you?" where "Bob" is replaced by the
  *  command-line argument.
@@ -16,6 +16,11 @@ package edu.princeton.cs._11hello;
 
 import edu.princeton.cs.stdlib.StdOut;
 
+/**
+ * Diese Klasse soll zeigen, wie die Kommandozeilen-Argumente eingelesen
+ * werden können.
+ */
+@SuppressWarnings("CheckStyle")
 public class UseArgument {
 
     public static void main(String[] args) {
