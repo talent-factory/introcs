@@ -11,14 +11,23 @@ import edu.princeton.cs.stdlib.BinaryStdOut;
  *  Reads in a binary file from standard input and writes it to standard output.
  *
  *  % java ch.challenges.examples.Copy < mandrill.jpg > copy.jpg
- *
- *  % diff mandrill.jpg copy.jpg
- *
  */
 
-public class Copy {
+public final class Copy {
 
-    public static void main(String[] args) {
+    /**
+     * Utility-Klassen werden nicht instanziiert.
+     */
+    private Copy() {
+    }
+
+    /**
+     * Diese {@code main()} Methode liest binäre Daten vom STDIN und kopiert
+     * sie auf den STDOUT.
+     *
+     * @param args Wird nicht verwendet
+     */
+    public static void main(final String[] args) {
         while (!BinaryStdIn.isEmpty()) {
             char c = BinaryStdIn.readChar();
             BinaryStdOut.write(c);
