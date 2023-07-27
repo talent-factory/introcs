@@ -1,4 +1,5 @@
-package edu.princeton.cs.stdlib;/*
+package edu.princeton.cs.stdlib;
+/*
  *  Compilation:  javac StdIn.java
  *  Execution:    java StdIn   (interactive test of basic functionality)
  *  Dependencies: none
@@ -21,11 +22,11 @@ import java.util.regex.Pattern;
  *  These functions fall into one of four categories:
  *  <ul>
  *  <li>those for reading individual tokens from standard input, one at a time,
- *      and converting each to a number, string, or boolean
- *  <li>those for reading characters from standard input, one at a time
- *  <li>those for reading lines from standard input, one at a time
- *  <li>those for reading a sequence of values of the same type from standard input,
- *      and returning the values in an array
+ *      and converting each to a number, string, or boolean</li>
+ *  <li>those for reading characters from standard input, one at a time</li>
+ *  <li>those for reading lines from standard input, one at a time</li>
+ *  <li>those for reading a sequence of values of the same type from
+ *      standard input, and returning the values in an array</li>
  *  </ul>
  *  <p>
  *  Generally, it is best not to mix functions from the different

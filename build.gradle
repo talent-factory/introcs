@@ -7,7 +7,7 @@ group = 'edu.princeton.cs'
 version = '1.2.0-SNAPSHOT'
 description = 'introcs'
 
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_19
 
 repositories {
     mavenLocal()
@@ -30,24 +30,34 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.24")
 }
 
-task sourceJar(type: Jar) {
-  from sourceSets.main.allJava
+tasks.register('sourceJar', Jar) {
+    from sourceSets.main.allJava
 }
 
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+// Konfiguration der Veröffentlichungsaufgabe
 publishing {
     publications {
         mavenJava(MavenPublication) {
-          from components.java
+            from components.java
 
-          artifact sourceJar {
-            classifier "sources"
-          }
+            groupId = project.group
+            artifactId = project.name
+            version = project.version
+
+            // Einschließen der Quellcode-Komponente
+            artifact(tasks.register("sourcesJar", Jar) {
+                from sourceSets.main.allJava
+                archiveClassifier.set('sources')
+            })
         }
-     }
-}
-
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
+    }
+    repositories {
+        mavenLocal()
+    }
 }
 
 test {
