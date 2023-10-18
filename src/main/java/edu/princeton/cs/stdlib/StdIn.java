@@ -381,6 +381,24 @@ public final class StdIn {
     }
 
     /**
+     * Reads the next token from standard input, parses it as an integer,
+     * and returns the integer.
+     *
+     * @param message the message to be displayed before reading the integer
+     * @return the next integer on standard input
+     */
+    public static int readInt(String message) {
+        while (true) {
+            try {
+                StdOut.print(message);
+                return StdIn.readInt();
+            } catch (Exception e) {
+                StdOut.println(e.getMessage());
+            }
+        }
+    }
+
+    /**
      * Reads the next token from standard input, parses it as a double, and returns the double.
      *
      * @return the next double on standard input
@@ -614,7 +632,10 @@ public final class StdIn {
      *
      * @param args the command-line arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
+
+        int intValue = readInt("Type an int: ");
+        StdOut.println("Your int was: " + intValue);
 
         StdOut.print("Type a string: ");
         String s = StdIn.readString();
@@ -635,6 +656,7 @@ public final class StdIn {
         double c = StdIn.readDouble();
         StdOut.println("Your double was: " + c);
         StdOut.println();
+
     }
 
 }
