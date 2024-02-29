@@ -1,20 +1,32 @@
-package edu.princeton.cs.stdlib;
-
 /*
- *  Compilation:  javac StdIn.java
- *  Execution:    java StdIn   (interactive test of basic functionality)
- *  Dependencies: none
+ * Released under MIT License
  *
- *  Reads in data of various types from standard input.
+ * Copyright (©) 2023 Daniel Senften
  *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+ * of the Software, and to permit persons to whom the Software is furnished to
+ * do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NON INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+ * OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+package edu.princeton.cs.stdlib;
+
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Locale;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Pattern;
 
 /**
@@ -210,6 +222,7 @@ import java.util.regex.Pattern;
  * <em>Computer Science: An Interdisciplinary Approach</em>
  * by Robert Sedgewick and Kevin Wayne.
  * <p>
+ *
  * @author Robert Sedgewick
  * @author Kevin Wayne
  * @author David Pritchard
@@ -308,6 +321,23 @@ public final class StdIn {
     }
 
     /**
+     * Reads a line of text from the standard input with the given prompt.
+     *
+     * @param prompt the message to display as a prompt before reading the input
+     * @return the line of text entered by the user
+     */
+    public static String readLine(final String prompt) {
+        while (true) {
+            try {
+                StdOut.print(prompt);
+                return StdIn.readLine();
+            } catch (Exception e) {
+                StdOut.println(e.getMessage());
+            }
+        }
+    }
+
+    /**
      * Reads and returns the next character.
      *
      * @return the next {@code char}
@@ -324,6 +354,23 @@ public final class StdIn {
         } catch (NoSuchElementException e) {
             throw new NoSuchElementException("attempts to read a 'char' value from standard input, "
                     + NO_MORE_TOKENS);
+        }
+    }
+
+    /**
+     * Reads a single character from standard input with the given prompt.
+     *
+     * @param prompt the prompt to display before reading the character
+     * @return the character read from standard input
+     */
+    public static char readChar(final String prompt) {
+        while (true) {
+            try {
+                StdOut.print(prompt);
+                return StdIn.readChar();
+            } catch (Exception e) {
+                StdOut.println(e.getMessage());
+            }
         }
     }
 
@@ -356,6 +403,23 @@ public final class StdIn {
         } catch (NoSuchElementException e) {
             throw new NoSuchElementException("attempts to read a 'String' value from standard input, "
                     + NO_MORE_TOKENS);
+        }
+    }
+
+    /**
+     * Reads a string from standard input with a given prompt.
+     *
+     * @param prompt the prompt to display before reading the string
+     * @return the string read from standard input
+     */
+    public static String readString(final String prompt) {
+        while (true) {
+            try {
+                StdOut.print(prompt);
+                return StdIn.readString();
+            } catch (Exception e) {
+                StdOut.println(e.getMessage());
+            }
         }
     }
 
@@ -419,6 +483,23 @@ public final class StdIn {
     }
 
     /**
+     * Reads a double value from standard input with the given prompt.
+     *
+     * @param prompt the prompt to display before reading the double
+     * @return the double value read from standard input
+     */
+    public static double readDouble(final String prompt) {
+        while (true) {
+            try {
+                StdOut.print(prompt);
+                return StdIn.readDouble();
+            } catch (Exception e) {
+                StdOut.println(e.getMessage());
+            }
+        }
+    }
+
+    /**
      * Reads the next token from standard input, parses it as a float, and returns the float.
      *
      * @return the next float on standard input
@@ -435,6 +516,25 @@ public final class StdIn {
         } catch (NoSuchElementException e) {
             throw new NoSuchElementException("attempts to read a 'float' value from standard input, "
                     + "but there no more tokens are available");
+        }
+    }
+
+    /**
+     * Reads a float value from standard input with the given prompt.
+     *
+     * @param prompt the prompt to display before reading the float
+     * @return the float value read from standard input
+     * @throws NoSuchElementException if standard input is empty
+     * @throws InputMismatchException if the next token cannot be parsed as a float
+     */
+    public static float readFloat(final String prompt) {
+        while (true) {
+            try {
+                StdOut.print(prompt);
+                return StdIn.readFloat();
+            } catch (Exception e) {
+                StdOut.println(e.getMessage());
+            }
         }
     }
 
@@ -459,6 +559,24 @@ public final class StdIn {
     }
 
     /**
+     * Prompts the user for input with the provided prompt and reads a long value from the user.
+     * If an exception occurs during input reading, the error message is printed and the user is prompted again.
+     *
+     * @param prompt the prompt message to display to the user
+     * @return the long value entered by the user
+     */
+    public static long readLong(final String prompt) {
+        while (true) {
+            try {
+                StdOut.print(prompt);
+                return StdIn.readLong();
+            } catch (Exception e) {
+                StdOut.println(e.getMessage());
+            }
+        }
+    }
+
+    /**
      * Reads the next token from standard input, parses it as a short integer, and returns the short integer.
      *
      * @return the next short integer on standard input
@@ -479,6 +597,23 @@ public final class StdIn {
     }
 
     /**
+     * Reads a short value from the standard input.
+     *
+     * @param prompt the prompt displayed to the user
+     * @return the short value entered by the user
+     */
+    public static short readShort(final String prompt) {
+        while (true) {
+            try {
+                StdOut.print(prompt);
+                return StdIn.readShort();
+            } catch (Exception e) {
+                StdOut.println(e.getMessage());
+            }
+        }
+    }
+
+    /**
      * Reads the next token from standard input, parses it as a byte, and returns the byte.
      *
      * @return the next byte on standard input
@@ -495,6 +630,25 @@ public final class StdIn {
         } catch (NoSuchElementException e) {
             throw new NoSuchElementException("attempts to read a 'byte' value from standard input, "
                     + NO_MORE_TOKENS);
+        }
+    }
+
+    /**
+     * Reads and returns a byte from standard input with the given prompt.
+     *
+     * @param prompt the prompt to display before reading the byte
+     * @return the byte read from standard input
+     * @throws NoSuchElementException if standard input is empty
+     * @throws InputMismatchException if the next token cannot be parsed as a byte
+     */
+    public static byte readByte(final String prompt) {
+        while (true) {
+            try {
+                StdOut.print(prompt);
+                return StdIn.readByte();
+            } catch (Exception e) {
+                StdOut.println(e.getMessage());
+            }
         }
     }
 
@@ -529,7 +683,26 @@ public final class StdIn {
             throw new NoSuchElementException("attempts to read a 'boolean' value from standard input, "
                     + NO_MORE_TOKENS);
         }
+    }
 
+    /**
+     * Reads a boolean value from standard input with the given prompt.
+     *
+     * @param prompt The prompt to display before reading the boolean.
+     * @return The boolean value read from standard input.
+     * @throws NoSuchElementException if standard input is empty.
+     * @throws InputMismatchException if the next token cannot be parsed as a boolean:
+     *                                true or 1 for true, and false or 0 for false, ignoring case.
+     */
+    public static boolean readBoolean(final String prompt) {
+        while (true) {
+            try {
+                StdOut.print(prompt);
+                return StdIn.readBoolean();
+            } catch (Exception e) {
+                StdOut.println(e.getMessage());
+            }
+        }
     }
 
     /**

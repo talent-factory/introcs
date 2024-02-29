@@ -4,9 +4,9 @@ import edu.princeton.cs.stdlib.StdOut;
 
 import java.util.Objects;
 
-/******************************************************************************
- *  Compilation:  javac Complex.java
- *  Execution:    java Complex
+/*
+ *  Compilation: javac Complex.java
+ *  Execution:   java Complex
  *
  *  Data type for complex numbers.
  *
@@ -48,8 +48,7 @@ public class Complex {
     public static Complex plus(Complex a, Complex b) {
         double real = a.re + b.re;
         double imag = a.im + b.im;
-        Complex sum = new Complex(real, imag);
-        return sum;
+        return new Complex(real, imag);
     }
 
     // sample client for testing

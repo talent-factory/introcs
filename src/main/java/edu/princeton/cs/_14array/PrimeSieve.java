@@ -1,8 +1,8 @@
 package edu.princeton.cs._14array;
 
-/******************************************************************************
- *  Compilation:  javac PrimeSieve.java
- *  Execution:    java -Xmx1100m PrimeSieve n
+/*
+ *  Compilation: javac PrimeSieve.java
+ *  Execution:   java -Xmx1100m PrimeSieve n
  *  
  *  Computes the number of primes less than or equal to n using
  *  the Sieve of Eratosthenes.
@@ -28,14 +28,14 @@ package edu.princeton.cs._14array;
  *
  *                  n     Primes <= n
  *  ---------------------------------
- *                 10               4   
- *                100              25  
- *              1,000             168  
- *             10,000           1,229  
- *            100,000           9,592  
- *          1,000,000          78,498  
- *         10,000,000         664,579  
- *        100,000,000       5,761,455  
+ *                 10               4
+ *                100              25
+ *              1,000             168
+ *             10,000           1,229
+ *            100,000           9,592
+ *          1,000,000          78,498
+ *         10,000,000         664,579
+ *        100,000,000       5,761,455
  *      1,000,000,000      50,847,534  
  *
  ******************************************************************************/

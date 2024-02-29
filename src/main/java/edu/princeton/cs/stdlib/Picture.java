@@ -1,4 +1,6 @@
-package edu.princeton.cs.stdlib;/*
+package edu.princeton.cs.stdlib;
+
+/*
  *  Compilation:  javac Picture.java
  *  Execution:    java Picture imagename
  *  Dependencies: none
@@ -28,14 +30,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.KeyStroke;
+import javax.swing.*;
 
 
 /**
@@ -252,8 +247,7 @@ public final class Picture implements ActionListener {
 
 
             frame.setContentPane(getJLabel());
-            // f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             frame.setTitle(Objects.requireNonNullElseGet(filename, () -> width + "-by-" + height));
             frame.setResizable(false);
             frame.pack();
@@ -468,7 +462,7 @@ public final class Picture implements ActionListener {
      */
     public static void main(String[] args) {
         Picture picture = new Picture(args[0]);
-        System.out.printf("%d-by-%d\n", picture.width(), picture.height());
+        System.out.printf("%d-by-%d%n", picture.width(), picture.height());
         picture.show();
     }
 
