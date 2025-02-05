@@ -69,7 +69,7 @@ public class Complex {
         StdOut.println("conj(a)      = " + a.conjugate());
         StdOut.println("|a|          = " + a.abs());
         StdOut.println("tan(a)       = " + a.tan());
-    }
+
 
     // return a string representation of the invoking Complex object
     public String toString() {
