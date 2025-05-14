@@ -65,9 +65,12 @@ public class MM1Queue {
                 hist.addDataPoint(Math.min(60, (int) (Math.round(wait))));
                 totalWait += wait;
                 customersServiced++;
+                
+                // Berechne Durchschnittswerte für die Anzeige
+                double avgWait = (customersServiced > 0) ? totalWait/customersServiced : 0;
+                
                 // Display statistics on the canvas
-                String stats = String.format("Avg Wait = %.2f, Customers = %d", 
-                                 (customersServiced > 0 ? totalWait/customersServiced : 0), customersServiced);
+                String stats = String.format("Avg Wait = %.2f, Customers = %d", avgWait, customersServiced);
                 StdDraw.clear();
                 // Draw the statistics text at the top of the canvas
                 StdDraw.setPenColor(StdDraw.BLACK);
