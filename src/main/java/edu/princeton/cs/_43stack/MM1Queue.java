@@ -38,7 +38,8 @@ public class MM1Queue {
         double nextDeparture = Double.POSITIVE_INFINITY;  // time of next departure
 
         // double expectedWait = 1.0 / (mu - lambda);        // W = expected time in system
-
+        
+        // These variables are used for statistical tracking
         double totalWait = 0.0;
         long customersServiced = 0;
 
@@ -64,7 +65,13 @@ public class MM1Queue {
                 hist.addDataPoint(Math.min(60, (int) (Math.round(wait))));
                 totalWait += wait;
                 customersServiced++;
+                // Display statistics on the canvas
+                String stats = String.format("Avg Wait = %.2f, Customers = %d", 
+                                 (customersServiced > 0 ? totalWait/customersServiced : 0), customersServiced);
                 StdDraw.clear();
+                // Draw the statistics text at the top of the canvas
+                StdDraw.setPenColor(StdDraw.BLACK);
+                StdDraw.textLeft(0.1, 0.95, stats);
                 hist.draw();
                 StdDraw.show();
                 StdDraw.pause(30);
