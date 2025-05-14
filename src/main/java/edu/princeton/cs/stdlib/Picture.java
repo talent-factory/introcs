@@ -27,6 +27,7 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.net.URL;
 import java.util.Objects;
 import javax.imageio.ImageIO;
@@ -153,7 +154,12 @@ public final class Picture implements ActionListener {
 
                 // or URL from web
                 if (url == null) {
-                    url = new URL(name);
+                    try {
+                        URI uri = new URI(name);
+                        url = uri.toURL();
+                    } catch (java.net.URISyntaxException e) {
+                        throw new IllegalArgumentException("Invalid URL: " + name, e);
+                    }
                 }
 
                 image = ImageIO.read(url);
