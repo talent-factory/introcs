@@ -59,9 +59,7 @@ public final class StdAudio {
     private static final int MONO   = 1;
     private static final int STEREO = 2;
     private static final boolean LITTLE_ENDIAN = false;
-    // BIG_ENDIAN removed - was unused
     private static final boolean SIGNED        = true;
-    // UNSIGNED removed - was unused
 
 
     private static SourceDataLine line;   // to play the sound
