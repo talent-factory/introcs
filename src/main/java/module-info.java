@@ -1,6 +1,6 @@
 module introcs {
 
-    requires java.desktop;
+    requires transitive java.desktop;
     requires jdk.management;
 
     requires org.apache.commons.lang3;
