@@ -58,6 +58,7 @@ import java.io.File;
 import java.io.IOException;
 
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 
 import java.util.ArrayList;
@@ -979,10 +980,10 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
         // try to read from URL
         if ((icon == null) || (icon.getImageLoadStatus() != MediaTracker.COMPLETE)) {
             try {
-                URL url = new URL(filename);
+                URL url = URI.create(filename).toURL();
                 icon = new ImageIcon(url);
             }
-            catch (MalformedURLException e) {
+            catch (MalformedURLException | IllegalArgumentException e) {
                 /* not a url */
             }
         }

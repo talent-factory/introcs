@@ -257,7 +257,6 @@ public final class StdAudio {
             return data;
         }
 
-        // TODO: handle big endian (or other formats)
         else throw new IllegalStateException("audio format is neither mono or stereo");
     }
 

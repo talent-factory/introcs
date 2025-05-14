@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URI;
 import java.net.URL;
 import java.net.Socket;
 // import java.net.HttpURLConnection;
@@ -178,7 +179,11 @@ public final class In {
 
             // or URL from web
             if (url == null) {
-                url = new URL(name);
+                try {
+                    url = URI.create(name).toURL();
+                } catch (IllegalArgumentException e) {
+                    throw new IllegalArgumentException("Invalid URL: " + name, e);
+                }
             }
 
             URLConnection site = url.openConnection();

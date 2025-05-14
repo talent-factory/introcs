@@ -60,7 +60,6 @@ package edu.princeton.cs.stdlib;/*
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
-@SuppressWarnings("unused")
 public class StdArrayIO {
 
     // it doesn't make sense to instantiate this class

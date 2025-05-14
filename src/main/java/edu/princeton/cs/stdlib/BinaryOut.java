@@ -34,7 +34,7 @@ import java.net.Socket;
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
-@SuppressWarnings({"unused", "DuplicatedCode"})
+@SuppressWarnings({"DuplicatedCode"})
 public final class BinaryOut {
 
     private BufferedOutputStream out;  // the output stream

@@ -12,7 +12,6 @@ import java.awt.*;
  *
  ******************************************************************************/
 
-@SuppressWarnings("unused")
 public class Turtle {
     private double x, y;     // turtle is at (x, y)
     private double angle;    // facing this many degrees counterclockwise from the x-axis

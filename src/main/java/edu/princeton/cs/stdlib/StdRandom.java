@@ -69,7 +69,6 @@ import java.util.Random;
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
-@SuppressWarnings("unused")
 public final class StdRandom {
 
     private static Random random;    // pseudo-random number generator

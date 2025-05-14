@@ -33,7 +33,7 @@ import java.util.NoSuchElementException;
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
-@SuppressWarnings({"unused", "DuplicatedCode"})
+@SuppressWarnings({"DuplicatedCode"})
 public final class BinaryStdIn {
     private static final int EOF = -1;      // end of file
 

@@ -76,7 +76,7 @@ import javax.swing.KeyStroke;
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
-@SuppressWarnings({"unused", "DuplicatedCode"})
+@SuppressWarnings({"DuplicatedCode"})
 public final class GrayscalePicture implements ActionListener {
     private final BufferedImage image;         // the rasterized image
     private JFrame frame;                      // on-screen view
@@ -150,9 +150,8 @@ public final class GrayscalePicture implements ActionListener {
                 // or URL from web
                 if (url == null) {
                     try {
-                        URI uri = new URI(name);
-                        url = uri.toURL();
-                    } catch (java.net.URISyntaxException e) {
+                        url = URI.create(name).toURL();
+                    } catch (IllegalArgumentException e) {
                         throw new IllegalArgumentException("Invalid URL: " + name, e);
                     }
                 }

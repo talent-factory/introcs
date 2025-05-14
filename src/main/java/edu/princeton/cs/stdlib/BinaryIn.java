@@ -11,6 +11,7 @@ package edu.princeton.cs.stdlib;/*
 
 import java.io.*;
 import java.net.Socket;
+import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.NoSuchElementException;
@@ -37,7 +38,7 @@ import java.util.NoSuchElementException;
  * @author Robert Sedgewick
  * @author Kevin Wayne
  */
-@SuppressWarnings({"unused", "DuplicatedCode"})
+@SuppressWarnings({"DuplicatedCode"})
 public final class BinaryIn {
     private static final int EOF = -1;   // end of file
 
@@ -116,14 +117,14 @@ public final class BinaryIn {
 
             // or URL from web
             if (url == null) {
-                url = new URL(name);
+                url = URI.create(name).toURL();
             }
 
             URLConnection site = url.openConnection();
             InputStream is = site.getInputStream();
             in = new BufferedInputStream(is);
             fillBuffer();
-        } catch (IOException ioe) {
+        } catch (IOException e) {
             System.err.println("Could not open " + name);
         }
     }

@@ -28,7 +28,6 @@ import java.util.Locale;
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
-@SuppressWarnings("unused")
 public class Out {
 
     // force Unicode UTF-8 encoding; otherwise it's system dependent

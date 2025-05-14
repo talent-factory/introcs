@@ -155,9 +155,8 @@ public final class Picture implements ActionListener {
                 // or URL from web
                 if (url == null) {
                     try {
-                        URI uri = new URI(name);
-                        url = uri.toURL();
-                    } catch (java.net.URISyntaxException e) {
+                        url = URI.create(name).toURL();
+                    } catch (IllegalArgumentException e) {
                         throw new IllegalArgumentException("Invalid URL: " + name, e);
                     }
                 }
