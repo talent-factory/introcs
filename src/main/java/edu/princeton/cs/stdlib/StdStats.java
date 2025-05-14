@@ -44,7 +44,6 @@ package edu.princeton.cs.stdlib;/*
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
-@SuppressWarnings({ "DuplicatedCode"})
 public final class StdStats {
 
     private StdStats() { }

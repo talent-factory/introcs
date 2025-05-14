@@ -30,7 +30,6 @@ import java.io.IOException;
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
-@SuppressWarnings({"DuplicatedCode"})
 public final class BinaryStdOut {
     private static BufferedOutputStream out;  // output stream (standard output)
     private static int buffer;                // 8-bit buffer of bits to write

@@ -13,6 +13,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.Socket;
 // import java.net.HttpURLConnection;
@@ -180,8 +181,8 @@ public final class In {
             // or URL from web
             if (url == null) {
                 try {
-                    url = URI.create(name).toURL();
-                } catch (IllegalArgumentException e) {
+                    url = new URI(name).toURL();
+                } catch (IllegalArgumentException | URISyntaxException e) {
                     throw new IllegalArgumentException("Invalid URL: " + name, e);
                 }
             }

@@ -59,6 +59,7 @@ import java.io.IOException;
 
 import java.net.MalformedURLException;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 import java.util.ArrayList;
@@ -980,10 +981,10 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
         // try to read from URL
         if ((icon == null) || (icon.getImageLoadStatus() != MediaTracker.COMPLETE)) {
             try {
-                URL url = URI.create(filename).toURL();
+                URL url = new URI(filename).toURL();
                 icon = new ImageIcon(url);
             }
-            catch (MalformedURLException | IllegalArgumentException e) {
+            catch (MalformedURLException | IllegalArgumentException | URISyntaxException e) {
                 /* not a url */
             }
         }

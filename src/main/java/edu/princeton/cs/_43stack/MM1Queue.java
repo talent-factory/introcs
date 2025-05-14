@@ -39,9 +39,9 @@ public class MM1Queue {
 
         // double expectedWait = 1.0 / (mu - lambda);        // W = expected time in system
         
-        // These variables are used for statistical tracking
-        double totalWait = 0.0;
-        long customersServiced = 0;
+        // These variables are used for statistical tracking and display
+        double totalWait = 0.0;        // Tracks total customer wait time for statistics
+        long customersServiced = 0;    // Counts number of customers processed
 
         // histogram object
         Histogram hist = new Histogram(60 + 1);

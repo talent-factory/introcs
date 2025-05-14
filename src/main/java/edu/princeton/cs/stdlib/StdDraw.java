@@ -474,7 +474,6 @@ import javax.swing.KeyStroke;
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
-@SuppressWarnings({"DuplicatedCode", "SuspiciousNameCombination", "UnnecessaryLocalVariable"})
 public final class StdDraw implements ActionListener, MouseListener, MouseMotionListener, KeyListener {
 
     /**

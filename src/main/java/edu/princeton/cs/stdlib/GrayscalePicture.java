@@ -30,6 +30,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Objects;
 import javax.imageio.ImageIO;
@@ -150,8 +151,8 @@ public final class GrayscalePicture implements ActionListener {
                 // or URL from web
                 if (url == null) {
                     try {
-                        url = URI.create(name).toURL();
-                    } catch (IllegalArgumentException e) {
+                        url = new URI(name).toURL();
+                    } catch (IllegalArgumentException | URISyntaxException e) {
                         throw new IllegalArgumentException("Invalid URL: " + name, e);
                     }
                 }
