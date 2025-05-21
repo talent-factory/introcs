@@ -1,4 +1,6 @@
-package edu.princeton.cs.stdlib;/*
+package edu.princeton.cs.stdlib;
+
+/*
  *  Compilation:  javac StdDraw.java
  *  Execution:    java StdDraw
  *  Dependencies: none

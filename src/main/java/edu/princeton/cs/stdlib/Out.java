@@ -1,4 +1,6 @@
-package edu.princeton.cs.stdlib;/*
+package edu.princeton.cs.stdlib;
+
+/*
  *  Compilation:  javac Out.java
  *  Execution:    java Out
  *  Dependencies: none
@@ -29,6 +31,16 @@ import java.util.Locale;
  *  @author Kevin Wayne
  */
 public class Out {
+    
+    /**
+     * Checks if the stream is closed and throws an exception if it is.
+     * @throws IllegalStateException if the stream is closed
+     */
+    private void checkClosed() {
+        if (out == null) {
+            throw new IllegalStateException("Stream is closed");
+        }
+    }
 
     // force Unicode UTF-8 encoding; otherwise it's system dependent
     private static final String CHARSET_NAME = "UTF-8";
@@ -94,15 +106,22 @@ public class Out {
 
    /**
      * Closes the output stream.
+     * @throws IllegalStateException if the stream is already closed
      */
     public void close() {
+        if (out == null) {
+            throw new IllegalStateException("Stream is already closed");
+        }
         out.close();
+        out = null; // Mark as closed
     }
 
    /**
      * Terminates the current line by printing the line-separator string.
+     * @throws IllegalStateException if the stream is closed
      */
     public void println() {
+        checkClosed();
         out.println();
     }
 
@@ -110,8 +129,10 @@ public class Out {
      * Prints an object to this output stream and then terminates the line.
      *
      * @param x the object to print
+     * @throws IllegalStateException if the stream is closed
      */
     public void println(Object x) {
+        checkClosed();
         out.println(x);
     }
 
@@ -119,8 +140,10 @@ public class Out {
      * Prints a boolean to this output stream and then terminates the line.
      *
      * @param x the boolean to print
+     * @throws IllegalStateException if the stream is closed
      */
     public void println(boolean x) {
+        checkClosed();
         out.println(x);
     }
 
@@ -128,8 +151,10 @@ public class Out {
      * Prints a character to this output stream and then terminates the line.
      *
      * @param x the character to print
+     * @throws IllegalStateException if the stream is closed
      */
     public void println(char x) {
+        checkClosed();
         out.println(x);
     }
 
@@ -137,8 +162,10 @@ public class Out {
      * Prints a double to this output stream and then terminates the line.
      *
      * @param x the double to print
+     * @throws IllegalStateException if the stream is closed
      */
     public void println(double x) {
+        checkClosed();
         out.println(x);
     }
 
@@ -146,8 +173,10 @@ public class Out {
      * Prints a float to this output stream and then terminates the line.
      *
      * @param x the float to print
+     * @throws IllegalStateException if the stream is closed
      */
     public void println(float x) {
+        checkClosed();
         out.println(x);
     }
 
@@ -155,8 +184,10 @@ public class Out {
      * Prints an integer to this output stream and then terminates the line.
      *
      * @param x the integer to print
+     * @throws IllegalStateException if the stream is closed
      */
     public void println(int x) {
+        checkClosed();
         out.println(x);
     }
 
@@ -164,8 +195,10 @@ public class Out {
      * Prints a long to this output stream and then terminates the line.
      *
      * @param x the long to print
+     * @throws IllegalStateException if the stream is closed
      */
     public void println(long x) {
+        checkClosed();
         out.println(x);
     }
 
@@ -175,8 +208,10 @@ public class Out {
      * To write binary data, see {@link BinaryOut}.
      *
      * @param x the byte to print
+     * @throws IllegalStateException if the stream is closed
      */
     public void println(byte x) {
+        checkClosed();
         out.println(x);
     }
 
@@ -184,8 +219,10 @@ public class Out {
 
    /**
      * Flushes this output stream.
+     * @throws IllegalStateException if the stream is closed
      */
     public void print() {
+        checkClosed();
         out.flush();
     }
 
@@ -193,8 +230,10 @@ public class Out {
      * Prints an object to this output stream and flushes this output stream.
      *
      * @param x the object to print
+     * @throws IllegalStateException if the stream is closed
      */
     public void print(Object x) {
+        checkClosed();
         out.print(x);
         out.flush();
     }
@@ -203,8 +242,10 @@ public class Out {
      * Prints a boolean to this output stream and flushes this output stream.
      *
      * @param x the boolean to print
+     * @throws IllegalStateException if the stream is closed
      */
     public void print(boolean x) {
+        checkClosed();
         out.print(x);
         out.flush();
     }
@@ -213,8 +254,10 @@ public class Out {
      * Prints a character to this output stream and flushes this output stream.
      *
      * @param x the character to print
+     * @throws IllegalStateException if the stream is closed
      */
     public void print(char x) {
+        checkClosed();
         out.print(x);
         out.flush();
     }
@@ -223,8 +266,10 @@ public class Out {
      * Prints a double to this output stream and flushes this output stream.
      *
      * @param x the double to print
+     * @throws IllegalStateException if the stream is closed
      */
     public void print(double x) {
+        checkClosed();
         out.print(x);
         out.flush();
     }
@@ -233,8 +278,10 @@ public class Out {
      * Prints a float to this output stream and flushes this output stream.
      *
      * @param x the float to print
+     * @throws IllegalStateException if the stream is closed
      */
     public void print(float x) {
+        checkClosed();
         out.print(x);
         out.flush();
     }
@@ -243,8 +290,10 @@ public class Out {
      * Prints an integer to this output stream and flushes this output stream.
      *
      * @param x the integer to print
+     * @throws IllegalStateException if the stream is closed
      */
     public void print(int x) {
+        checkClosed();
         out.print(x);
         out.flush();
     }
@@ -253,8 +302,10 @@ public class Out {
      * Prints a long integer to this output stream and flushes this output stream.
      *
      * @param x the long integer to print
+     * @throws IllegalStateException if the stream is closed
      */
     public void print(long x) {
+        checkClosed();
         out.print(x);
         out.flush();
     }
@@ -263,8 +314,10 @@ public class Out {
      * Prints a byte to this output stream and flushes this output stream.
      *
      * @param x the byte to print
+     * @throws IllegalStateException if the stream is closed
      */
     public void print(byte x) {
+        checkClosed();
         out.print(x);
         out.flush();
     }
@@ -275,8 +328,10 @@ public class Out {
      *
      * @param format the format string
      * @param args   the arguments accompanying the format string
+     * @throws IllegalStateException if the stream is closed
      */
     public void printf(String format, Object... args) {
+        checkClosed();
         out.printf(LOCALE, format, args);
         out.flush();
     }
@@ -288,8 +343,10 @@ public class Out {
      * @param locale the locale
      * @param format the format string
      * @param args   the arguments accompanying the format string
+     * @throws IllegalStateException if the stream is closed
      */
     public void printf(Locale locale, String format, Object... args) {
+        checkClosed();
         out.printf(locale, format, args);
         out.flush();
     }

@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+          "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+          "https://checkstyle.org/dtds/configuration_1_3.dtd">
+<module name="Checker">
+    <!-- Basic checks -->
+    <module name="FileTabCharacter">
+        <property name="eachLine" value="true"/>
+    </module>
+
+    <module name="TreeWalker">
+        <!-- Indentation -->
+        <module name="Indentation">
+            <property name="basicOffset" value="4"/>
+            <property name="braceAdjustment" value="0"/>
+            <property name="caseIndent" value="4"/>
+            <property name="throwsIndent" value="4"/>
+            <property name="lineWrappingIndentation" value="4"/>
+            <property name="arrayInitIndent" value="4"/>
+        </module>
+        
+        <!-- Naming -->
+        <module name="TypeName">
+            <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
+            <message key="name.invalidPattern" 
+                     value="Typ-Name ''{0}'' entspricht nicht dem Muster ''{1}''"/>
+        </module>
+        
+        <module name="MethodName">
+            <property name="format" value="^[a-z][a-zA-Z0-9_]*$"/>
+            <message key="name.invalidPattern"
+                     value="Methodenname ''{0}'' entspricht nicht dem Muster ''{1}''"/>
+        </module>
+        
+        <module name="ConstantName">
+            <property name="format" value="^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$|^[a-z][a-zA-Z0-9]*$"/>
+            <message key="name.invalidPattern" 
+                     value="Konstantenname ''{0}'' entspricht nicht dem Muster ''{1}'' (Großbuchstaben mit Unterstrichen oder camelCase)"/>
+        </module>
+        
+        <!-- Javadoc -->
+        <module name="JavadocStyle">
+            <property name="checkFirstSentence" value="false"/>
+            <property name="checkHtml" value="false"/>
+            <message key="javadoc.missed.html.close" 
+                     value="Fehlendes schließendes HTML-Tag."/>
+            <message key="javadoc.unknown.tag" 
+                     value="Unbekanntes Javadoc-Tag: {0}"/>
+        </module>
+        
+        <module name="JavadocMethod">
+            <property name="validateThrows" value="false"/>
+            <property name="allowMissingParamTags" value="true"/>
+            <property name="allowMissingReturnTag" value="true"/>
+            <message key="javadoc.missing" 
+                     value="Fehlender Javadoc-Kommentar für {0} {1}"/>
+            <message key="javadoc.return.expected" 
+                     value='Fehlender @return-Tag in Javadoc-Kommentar für {0} {1}'/>
+            <message key="javadoc.return.expected.tag" 
+                     value='@return-Tag wird für nicht-leere Methoden benötigt'/>
+        </module>
+        
+        <module name="JavadocType">
+            <property name="scope" value="public"/>
+            <message key="javadoc.missing" 
+                     value="Fehlender Javadoc-Kommentar für {0} {1}"/>
+        </module>
+        
+        <!-- Imports -->
+        
+        <module name="UnusedImports">
+            <message key="import.unused" 
+                     value="Nicht verwendeter Import: {0}"/>
+        </module>
+        
+        <!-- Whitespace -->
+        <module name="WhitespaceAfter">
+            <property name="tokens" value="COMMA, LITERAL_IF, LITERAL_ELSE, LITERAL_WHILE, LITERAL_DO, LITERAL_FOR, DO_WHILE, LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, LITERAL_DO, LITERAL_WHILE, LITERAL_FOR, DO_WHILE, TYPE_EXTENSION_AND"/>
+            <message key="ws.notFollowed" 
+                     value="'{0}' muss von mindestens einem Leerzeichen gefolgt werden"/>
+            <message key="ws.illegalFollow" 
+                     value="'{0}' gefolgt von einem unerlaubten Zeichen"/>
+        </module>
+        
+
+    </module>
+    
+    <!-- Line length -->
+    <module name="LineLength">
+        <property name="max" value="120"/>
+        <property name="ignorePattern" value="^package.*|^import.*|href=.*|https?://.*|^ *\* *[^ ]+$"/>
+        <message key="maxLineLen" 
+                 value="Zeile ist zu lang: {0} Zeichen (maximal erlaubt: {1})"/>
+    </module>
+    
+    <!-- File length -->
+    <module name="FileLength">
+        <property name="max" value="2500"/>
+        <property name="fileExtensions" value="java"/>
+        <message key="maxLen.file" 
+                 value="Datei ist zu lang: {0,number,integer} Zeilen (maximal erlaubt: {1,number,integer})"/>
+    </module>
+    
+    <!-- Ensure files end with a newline -->
+    <module name="NewlineAtEndOfFile">
+        <property name="lineSeparator" value="lf"/>
+        <message key="line.newline" 
+                 value="Datei muss mit einer neuen Zeile enden"/>
+    </module>
+    
+
+</module>

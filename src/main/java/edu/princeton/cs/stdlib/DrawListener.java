@@ -1,4 +1,6 @@
-package edu.princeton.cs.stdlib;/*
+package edu.princeton.cs.stdlib;
+
+/*
  *  Compilation:  javac DrawListener.java
  *  Execution:    none
  *  Dependencies: none

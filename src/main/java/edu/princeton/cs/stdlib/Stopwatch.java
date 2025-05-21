@@ -1,4 +1,6 @@
-package edu.princeton.cs.stdlib;/*
+package edu.princeton.cs.stdlib;
+
+/*
  *  Compilation:  javac Stopwatch.java
  *  Execution:    java Stopwatch n
  *  Dependencies: none
@@ -43,6 +45,16 @@ public class Stopwatch {
     public double elapsedTime() {
         long now = System.currentTimeMillis();
         return (now - start) / 1000.0;
+    }
+    
+    /**
+     * Returns a string representation of the stopwatch.
+     *
+     * @return a string representation of the stopwatch
+     */
+    @Override
+    public String toString() {
+        return "Elapsed time: " + elapsedTime() + " seconds";
     }
 
 

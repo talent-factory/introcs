@@ -1,4 +1,6 @@
-package edu.princeton.cs.stdlib;/*
+package edu.princeton.cs.stdlib;
+
+/*
  *  Compilation:  javac In.java
  *  Execution:    java In   (basic test --- see source for required files)
  *  Dependencies: none

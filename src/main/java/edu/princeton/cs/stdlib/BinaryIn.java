@@ -1,4 +1,6 @@
-package edu.princeton.cs.stdlib;/*
+package edu.princeton.cs.stdlib;
+
+/*
  *  Compilation:  javac BinaryIn.java
  *  Execution:    java BinaryIn input output
  *  Dependencies: none

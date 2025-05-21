@@ -1,6 +1,36 @@
 plugins {
     id 'java'
     id 'maven-publish'
+    id 'jacoco'
+    id 'checkstyle'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+checkstyle {
+    toolVersion '10.12.1'
+    configFile file("config/checkstyle/google_checks.xml")
+    ignoreFailures false
+    showViolations true
+    
+    checkstyleMain {
+        exclude '**/module-info.java'
+    }
+    
+    checkstyleTest {
+        exclude '**/module-info.java'
+    }
+}
+
+tasks.withType(Checkstyle) {
+    reports {
+        xml.required = false
+        html.required = true
+    }
 }
 
 group = 'edu.princeton.cs'
@@ -16,6 +46,8 @@ repositories {
 }
 
 dependencies {
+    // Checkstyle
+    checkstyle 'com.puppycrawl.tools:checkstyle:10.12.1'
 
     // https://commons.apache.org/proper/commons-lang/javadocs/api-release/index.html
     implementation('org.apache.commons:commons-lang3:3.12.0')
@@ -23,7 +55,12 @@ dependencies {
     testImplementation("org.assertj:assertj-core:3.23.1")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.10.0")
+
+    // JaCoCo Konfiguration mit Java 21 Kompatibilität
+    jacoco {
+        toolVersion = "0.8.11"
+    }
 
     compileOnly("org.projectlombok:lombok:1.18.24")
     annotationProcessor("org.projectlombok:lombok:1.18.24")
@@ -61,4 +98,43 @@ publishing {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = false
+        csv.required = false
+        html.required = true
+        html.outputLocation = layout.buildDirectory.dir('reports/jacoco')
+    }
+}
+
+// Stellt sicher, dass die Testabdeckung nur für StopwatchCPU überprüft wird
+check.dependsOn jacocoTestCoverageVerification
+
+jacocoTestCoverageVerification {
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, include: '**/StopwatchCPU.class')
+        }))
+    }
+    
+    violationRules {
+        rule {
+            element = 'CLASS'
+            includes = ['**/StopwatchCPU*']
+            limit {
+                counter = 'INSTRUCTION'
+                value = 'COVEREDRATIO'
+                minimum = 0.9 // Hohe Abdeckung für unsere getestete Klasse
+            }
+            limit {
+                counter = 'BRANCH'
+                value = 'COVEREDRATIO'
+                minimum = 0.9
+            }
+        }
+    }
 }

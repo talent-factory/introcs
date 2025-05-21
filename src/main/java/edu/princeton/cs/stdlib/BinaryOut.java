@@ -1,4 +1,6 @@
-package edu.princeton.cs.stdlib;/*
+package edu.princeton.cs.stdlib;
+
+/*
  *  Compilation:  javac BinaryOut.java
  *  Execution:    java BinaryOut
  *  Dependencies: none
@@ -155,11 +157,16 @@ public final class BinaryOut {
    /**
      * Flushes and closes the binary output stream.
      * Once it is closed, bits can no longer be written.
+     * @throws IllegalStateException if the stream is already closed
      */
     public void close() {
+        if (out == null) {
+            throw new IllegalStateException("Stream is already closed");
+        }
         flush();
         try {
             out.close();
+            out = null; // Mark as closed
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -170,8 +177,12 @@ public final class BinaryOut {
    /**
      * Writes the specified bit to the binary output stream.
      * @param x the {@code boolean} to write
+     * @throws IllegalStateException if the stream is closed
      */
     public void write(boolean x) {
+        if (out == null) {
+            throw new IllegalStateException("Stream is closed");
+        }
         writeBit(x);
     }
 

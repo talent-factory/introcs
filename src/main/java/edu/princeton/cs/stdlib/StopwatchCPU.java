@@ -1,4 +1,6 @@
-package edu.princeton.cs.stdlib;/*
+package edu.princeton.cs.stdlib;
+
+/*
  *  Compilation:  javac StopwatchCPU.java
  *  Execution:    none
  *  Dependencies: none
@@ -22,7 +24,6 @@ import java.lang.management.ThreadMXBean;
  * @author Robert Sedgewick
  * @author Kevin Wayne
  */
-
 public class StopwatchCPU {
     private static final double NANOSECONDS_PER_SECOND = 1000000000;
 

@@ -1,4 +1,6 @@
-package edu.princeton.cs.stdlib;/*
+package edu.princeton.cs.stdlib;
+
+/*
  *  Compilation:  javac GrayscalePicture.java
  *  Execution:    java GrayscalePicture imagename
  *  Dependencies: none
