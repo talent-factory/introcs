@@ -134,7 +134,6 @@ public final class Picture implements ActionListener {
      */
     public Picture(String name) {
         if (name == null) throw new IllegalArgumentException("constructor argument is null");
-
         this.filename = name;
         try {
             // try to read from file in working directory

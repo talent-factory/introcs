@@ -58,8 +58,13 @@ public final class StdAudio {
 
     private static final int MONO   = 1;
     private static final int STEREO = 2;
+
+    @SuppressWarnings("unused")  // Reserved for future use
+    private static final boolean BIG_ENDIAN = true;
     private static final boolean LITTLE_ENDIAN = false;
-    private static final boolean SIGNED        = true;
+    @SuppressWarnings("unused")  // Reserved for future use
+    private static final boolean UNSIGNED = false;
+    private static final boolean SIGNED = true;
 
 
     private static SourceDataLine line;   // to play the sound
@@ -278,14 +283,21 @@ public final class StdAudio {
         }
 
         // assumes 16-bit samples with sample rate = 44,100 Hz
-        // use 16-bit audio, mono, signed PCM, little Endian
-        AudioFormat format = new AudioFormat(SAMPLE_RATE, 16, MONO, SIGNED, LITTLE_ENDIAN);
+        // use 16-bit audio, mono, signed PCM
+        boolean bigEndian = false;  // Default to little-endian for backward compatibility
+        AudioFormat format = new AudioFormat(SAMPLE_RATE, 16, MONO, SIGNED, bigEndian);
         byte[] data = new byte[2 * samples.length];
         for (int i = 0; i < samples.length; i++) {
             int temp = (short) (samples[i] * MAX_16_BIT);
             if (samples[i] == 1.0) temp = Short.MAX_VALUE;   // special case since 32768 not a short
-            data[2*i + 0] = (byte) temp;
-            data[2*i + 1] = (byte) (temp >> 8);   // little endian
+            
+            if (bigEndian) {
+                data[2*i] = (byte) (temp >> 8);
+                data[2*i + 1] = (byte) temp;
+            } else {
+                data[2*i] = (byte) temp;
+                data[2*i + 1] = (byte) (temp >> 8);
+            }
         }
 
         // now save the file

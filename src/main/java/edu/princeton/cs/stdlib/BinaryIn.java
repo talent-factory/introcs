@@ -38,7 +38,7 @@ import java.util.NoSuchElementException;
  * @author Robert Sedgewick
  * @author Kevin Wayne
  */
-@SuppressWarnings({"DuplicatedCode"})
+@SuppressWarnings({"DuplicatedCode" })
 public final class BinaryIn {
     private static final int EOF = -1;   // end of file
 
@@ -116,7 +116,7 @@ public final class BinaryIn {
             URL url = getClass().getResource(name);
 
             // or URL from web
-            if (url == null) {
+            if (url == null) { 
                 url = URI.create(name).toURL();
             }
 
